@@ -4,7 +4,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 """"""""""""""""""Vim Plugin via Vundle""""""""""""""""""""""
-Plugin 'VundleVim/Vundle.vim'
+Plugin 'VundleVim/Vundle.vim' "プラグインの管理"
 Plugin 'scrooloose/nerdtree'
 Plugin 'Shougo/unite.vim'
 let g:unite_enable_start_insert=1 "insert modeでUniteを開く"
@@ -70,7 +70,7 @@ endif
 set backspace=indent,start,eol
 
 """"""""""""""""""""""""""""Mouse Settign""""""""""""""""""""""""""""""""""
-set mouse=a
+set mouse=a "マウスを使えるようにする"
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""Syntax Setting"""""""""""""""""""""""""""""""""
@@ -96,6 +96,7 @@ syntax on
 "自動でカッコを挿入
 inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
+inoremap < <><LEFT>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
 
@@ -103,7 +104,8 @@ set noswapfile "スワップファイルは使わない
 "set whichwrap=b,s,h,l,<,>,[,] "カーソルが行頭、行末で止まらないようにする"
 set nohlsearch " 検索キーワードをハイライトしないように設定
 set number	" 行番号を表示
-" ステータスラインを表示
+
+""""""""""""""""""representation of status line""""""""""""""""""""""
 set laststatus=2 " ステータスラインを常に表示
 set statusline=%F%r%h%= " ステータスラインの内容
 " インクリメンタル検索を有効化
@@ -111,6 +113,7 @@ set incsearch
 " 補完時の一覧表示機能有効化
 set wildmenu wildmode=list:full
 set virtualedit=block
+
 
 """"""""""""""""""""""Tab Setting"""""""""""""""""""""""
 set expandtab
@@ -124,6 +127,7 @@ set virtualedit=onemore
 
 """"""""""""""""""""" Clipboard setting """"""""""""""""""
 set clipboard=unnamed,autoselect
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set showmatch " 括弧の対応関係を一瞬表示する
 hi MatchParen ctermfg=LightGreen ctermbg=blue
