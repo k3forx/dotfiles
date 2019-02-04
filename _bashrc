@@ -1,4 +1,9 @@
+##############################
+# List of Alias
+##############################
+
 alias g='git'
+alias rm='rmtrash'
 alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -a'
@@ -7,5 +12,13 @@ alias op='open'
 alias opp='open .'
 alias de='cd ~/Desktop'
 alias viba='vi ~/.bashrc'
-alias virc='vi ~/.vimrc'
-PS1='\t \W $ '
+alias vivi='vi ~/.vimrc'
+alias soba='source ~/.bash_profile'
+alias vpn='open -a /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app/'
+alias line='open -a /Applications/LINE.app'
+alias chrome='open -a /Applications/Google\ Chrome.app/'
+
+##############################
+# representation of terminal
+##############################
+PS1='\n\t \W $ '
