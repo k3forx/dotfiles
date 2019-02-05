@@ -17,6 +17,7 @@ Plugin 'Shougo/neomru.vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tomtom/tcomment_vim'
+Plugin 'Lokaltog/vim-powerline' "ステータスラインの表示を色別にする"
 
 call vundle#end()
 filetype plugin indent on
