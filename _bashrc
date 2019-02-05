@@ -2,9 +2,13 @@
 # List of Alias
 ##############################
 
+if [ -x /usr/local/bin/gdircolors ]; then
+  eval `gdircolors ~/.dir_colors`
+  alias ls='gls --color=auto'
+fi
 alias g='git'
 alias rm='rmtrash'
-alias ls='ls -G'
+#alias ls='ls -G'
 alias ll='ls -l'
 alias la='ls -a'
 alias lt='ls -t'
@@ -13,6 +17,7 @@ alias opp='open .'
 alias de='cd ~/Desktop'
 alias viba='vi ~/.bashrc'
 alias vivi='vi ~/.vimrc'
+alias vidi='vi ~/.dir_colors'
 alias soba='source ~/.bash_profile'
 alias vpn='open -a /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app/'
 alias line='open -a /Applications/LINE.app'
@@ -22,3 +27,5 @@ alias chrome='open -a /Applications/Google\ Chrome.app/'
 # representation of terminal
 ##############################
 PS1='\n\t \W $ '
+#export LSCOLORS=excxcxdxbxegedabagacad
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
