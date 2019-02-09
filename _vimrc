@@ -17,6 +17,11 @@ Plugin 'Shougo/neomru.vim'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'Lokaltog/vim-powerline' "ステータスラインの表示を色別にする"
+Plugin 'reireias/vim-cheatsheet' "vimのメモを表示するプラグイン"
+let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示"
+Plugin 'simeji/winresizer' "分割したウィンドウをリサイズ。Ctrl+eでリサイズ開始"
+let g:winresizer_vert_resize = 1 "垂直方向を1ずつ動かす"
+let g:winresizer_horiz_resize = 1 "水平方向を1ずつ動かす"
 
 call vundle#end()
 filetype plugin indent on
