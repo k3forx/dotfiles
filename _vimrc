@@ -1,4 +1,3 @@
-set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -28,40 +27,6 @@ if has('vim_starting')
   let &t_SI .= "\e[6 q"
 endif
 
-"" Setting of vim-indent-guides "
-"let g:indent_guides_enable_on_vim_startup = 1
-"set shiftwidth=2
-
-" 挿入モード時、ステータスラインの色を変更
-"let g:hi_insert = 'highlight StatusLine guifg=darkblue guibg=darkyellow gui=none ctermfg=blue ctermbg=yellow cterm=none'
-"
-"if has('syntax')
-"  augroup InsertHook
-"    autocmd!
-"    autocmd InsertEnter * call s:StatusLine('Enter')
-"    autocmd InsertLeave * call s:StatusLine('Leave')
-"  augroup END
-"endif
-"
-"let s:slhlcmd = ''
-"function! s:StatusLine(mode)
-"  if a:mode == 'Enter'
-"    silent! let s:slhlcmd = 'highlight ' . s:GetHighlight('StatusLine')
-"    silent exec g:hi_insert
-"  else
-"    highlight clear StatusLine
-"    silent exec s:slhlcmd
-"  endif
-"endfunction
-"
-"function! s:GetHighlight(hi)
-"  redir => hl
-"  exec 'highlight '.a:hi
-"  redir END
-"  let hl = substitute(hl, '[\r\n]', '', 'g')
-"  let hl = substitute(hl, 'xxx', '', '')
-"  return hl
-"endfunction
 """""""""""""""""""""""""""""""""
 
 "[Backspace] で既存の文字を削除できるように設定
@@ -92,10 +57,7 @@ highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
 highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 highlight LineNr cterm=none ctermbg=black ctermfg=grey
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 let g:hybrid_use_iTerm_colors = 1
-"colorscheme hybrid"
-syntax on
 
 "自動でカッコを挿入
 inoremap { {}<LEFT>
