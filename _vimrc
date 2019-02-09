@@ -3,11 +3,11 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 """"""""""""""""""Vim Plugin via Vundle""""""""""""""""""""""
-Plugin 'VundleVim/Vundle.vim' "プラグインの管理"
-Plugin 'scrooloose/nerdtree'
-Plugin 'Shougo/unite.vim'
+Plugin 'VundleVim/Vundle.vim' "プラグインの管理マネージャはVundleを使用"
+Plugin 'scrooloose/nerdtree'  "ディレクトリ構造をNEEDTREEで表示するプラグイン"
+Plugin 'Shougo/unite.vim'     "vimのインターフェースUniteのプラグイン"
 let g:unite_enable_start_insert=1 "insert modeでUniteを開く"
-let g:unite_source_history_yank_enable=1
+let g:unite_source_history_yank_enable=1  ""
 let g:unite_source_file_mru_limit=200
 nnoremap <silent> ,uu :<C-u>Unite file_mru <CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file <CR>
@@ -38,9 +38,8 @@ set backspace=indent,start,eol
 """""""""""""""""""""""""""""""buffer setting""""""""""""""""""""""""""""""
 set hidden "保存せずにバッファを切り替えるようにする"
 
-""""""""""""""""""""""""""""Mouse Settign""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""Mouse Setting""""""""""""""""""""""""""""""""""
 set mouse=a "マウスを使えるようにする"
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""""""""""Syntax Setting"""""""""""""""""""""""""""""""""
 syntax on
@@ -56,15 +55,15 @@ highlight Operator ctermbg=black ctermfg=white
 highlight StatusLine term=none cterm=none ctermfg=black ctermbg=grey
 highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 highlight LineNr cterm=none ctermbg=black ctermfg=grey
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:hybrid_use_iTerm_colors = 1
 
-"自動でカッコを挿入
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""自動でカッコを挿入
 inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
 inoremap < <><LEFT>
 inoremap ' ''<LEFT>
 inoremap " ""<LEFT>
+set showmatch " 括弧の対応関係を一瞬表示する
 
 set noswapfile "スワップファイルは使わない
 "set whichwrap=b,s,h,l,<,>,[,] "カーソルが行頭、行末で止まらないようにする"
@@ -89,13 +88,11 @@ set autoindent
 set smartindent
 set shiftwidth=2
 set virtualedit=onemore
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 """"""""""""""""""""" Clipboard setting """"""""""""""""""
 set clipboard=unnamed,autoselect
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
-set showmatch " 括弧の対応関係を一瞬表示する
+
 hi MatchParen ctermfg=LightGreen ctermbg=blue
 source $VIMRUNTIME/macros/matchit.vim " Vimの「%」を拡張する
 
