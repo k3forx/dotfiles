@@ -12,16 +12,15 @@ let g:unite_source_file_mru_limit=200
 nnoremap <silent> ,uu :<C-u>Unite file_mru <CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file <CR>
 
-Plugin 'Shougo/neomru.vim'
-"Plugin 'nathanaelkane/vim-indent-guides'
-Plugin 'bronson/vim-trailing-whitespace'
-Plugin 'tomtom/tcomment_vim'
+Plugin 'Shougo/neomru.vim' "最近使用したファイルをUniteから呼び出す"
+Plugin 'bronson/vim-trailing-whitespace' "余分なスペースをハイライト・削除する"
+Plugin 'tomtom/tcomment_vim'  "gccでコメントアウト"
 Plugin 'Lokaltog/vim-powerline' "ステータスラインの表示を色別にする"
 Plugin 'reireias/vim-cheatsheet' "vimのメモを表示するプラグイン"
 let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示"
-Plugin 'simeji/winresizer' "分割したウィンドウをリサイズ。Ctrl+eでリサイズ開始"
-let g:winresizer_vert_resize = 1 "垂直方向を1ずつ動かす"
-let g:winresizer_horiz_resize = 1 "水平方向を1ずつ動かす"
+""Plugin 'simeji/winresizer' "分割したウィンドウをリサイズ。Ctrl+eでリサイズ開始"
+""let g:winresizer_vert_resize = 1 "垂直方向を1ずつ動かす"
+""let g:winresizer_horiz_resize = 1 "水平方向を1ずつ動かす"
 
 call vundle#end()
 filetype plugin indent on
