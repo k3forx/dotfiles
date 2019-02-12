@@ -23,6 +23,6 @@ alias chrome='open -a /Applications/Google\ Chrome.app/'
 ##############################
 # representation of terminal
 ##############################
-PS1='\n\t \W $ '
+PS1='\n\u@\W \t $ '
 #export LSCOLORS=excxcxdxbxegedabagacad
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
