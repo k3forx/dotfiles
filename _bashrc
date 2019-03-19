@@ -4,10 +4,11 @@
 eval `gdircolors ~/.dir_colors`
 alias ls='gls --color=auto'
 alias g='git'
-alias rm='rmtrash'
+#alias rm='rmtrash'
 alias ll='ls -l'
 alias la='ls -a'
 alias lt='ls -t'
+alias lla='ls -al'
 alias op='open'
 alias opp='open .'
 alias de='cd ~/Desktop'
