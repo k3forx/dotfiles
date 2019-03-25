@@ -3,3 +3,4 @@
 test.*
 *.swp
 .ipynb*
+.DS_store
