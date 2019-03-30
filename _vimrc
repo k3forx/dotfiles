@@ -22,6 +22,8 @@ let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示"
 ""let g:winresizer_vert_resize = 1 "垂直方向を1ずつ動かす"
 ""let g:winresizer_horiz_resize = 1 "水平方向を1ずつ動かす"
 Plugin 'itchyny/lightline.vim'
+Plugin 'vim-syntastic/syntastic'  "pythonのコーディングチェック"
+let g:syntastic_python_checkers = ["flake8"]
 
 call vundle#end()
 filetype plugin indent on
