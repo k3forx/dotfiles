@@ -94,6 +94,7 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 alias viz='vi ~/.zshrc'
+alias vidi='vi ~/.dir_colors'
 alias soz='source ~/.zshrc'
 alias op='open'
 alias opp='open .'
