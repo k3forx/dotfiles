@@ -116,3 +116,7 @@ export LS_COLORS='di=01;34:ln=36:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07
 export PROMPT=$'\n%n@%~ %* $ '
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
+
+if [ -f ~/.dir_colors ]; then
+  eval `gdircolors -b ~/.dir_colors`
+fi
