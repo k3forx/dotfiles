@@ -98,7 +98,9 @@ alias soz='source ~/.zshrc'
 alias op='open'
 alias opp='open .'
 alias bt='blueutil'
-
+alias vpn='open -a /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app/'
+alias line='open -a /Applications/LINE.app'
+alias chrome='open -a /Applications/Google\ Chrome.app/'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -Uz colors
