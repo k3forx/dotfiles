@@ -98,6 +98,7 @@ alias soz='source ~/.zshrc'
 alias op='open'
 alias opp='open .'
 alias bt='blueutil'
+
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -Uz colors
