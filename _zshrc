@@ -8,7 +8,8 @@ export ZSH="/Users/Kanata/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="robbyrussell"
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="simple"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -115,8 +116,7 @@ export CLICOLOR=true
 export LSCOLORS='exfxcxdxbxGxDxabagacad'
 export LS_COLORS='di=01;34:ln=36:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:*.pdf=35'
 
-export PROMPT=$'\n%n@%~ %* $ '
-PROMPT=$'\n%{$fg_bold[blue]%}%n@%{$reset_color%}%{$fg_bold[green]%}%~%{$reset_color%} %* $ '
+PROMPT=$'\n%{$fg_bold[blue]%}%n@%{$reset_color%}%{$fg_bold[green]%}%~ %*%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%} $ '
 
 [[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
 
