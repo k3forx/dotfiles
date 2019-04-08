@@ -97,6 +97,7 @@ source $ZSH/oh-my-zsh.sh
 alias viz='vi ~/.zshrc'
 alias vidi='vi ~/.dir_colors'
 alias vivi='vi ~/.vimrc'
+alias cdd='cd ~/dotfiles'
 alias soz='source ~/.zshrc'
 alias op='open'
 alias opp='open .'
