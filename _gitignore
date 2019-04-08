@@ -4,3 +4,6 @@ test.*
 *.swp
 .ipynb*
 .DS_store
+GPATH
+GRTAGS
+GTAGS
