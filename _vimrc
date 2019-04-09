@@ -5,6 +5,7 @@ call vundle#begin()
 """"""""""""""""""Vim Plugin via Vundle""""""""""""""""""""""
 Plugin 'VundleVim/Vundle.vim' "プラグインの管理マネージャはVundleを使用"
 Plugin 'scrooloose/nerdtree'  "ディレクトリ構造をNEEDTREEで表示するプラグイン"
+nnoremap <silent><C-e> :NERDTreeToggle<CR>
 Plugin 'Shougo/unite.vim'     "vimのインターフェースUniteのプラグイン"
 let g:unite_enable_start_insert=1 "insert modeでUniteを開く"
 let g:unite_source_history_yank_enable=1  ""
