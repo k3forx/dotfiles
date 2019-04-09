@@ -26,6 +26,7 @@ Plugin 'vim-syntastic/syntastic'  "pythonのコーディングチェックi"
 Plugin 'lighttiger2505/gtags.vim' "vimでgnu globalを使う"
 Plugin 'jsfaint/gen_tags.vim' "ctagsやgtagsの生成を自動で行う"
 Plugin 'mbbill/undotree' "undo-treeのプラグイン"
+Plugin 'tpope/vim-surround' "カッコやシングルクォートに対するプラグイン"
 let g:gen_tags#gtags_auto_gen = 1
 let g:syntastic_python_checkers = ["flake8"]
 
