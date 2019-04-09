@@ -32,6 +32,7 @@ let g:gen_tags#gtags_auto_gen = 1
 let g:syntastic_python_checkers = ["flake8"]
 Plugin 'davidhalter/jedi-vim' "pyhonの関数補完検索"
 Plugin 'ervandew/supertab' "devidhalter/jedi-vimををtapで補完"
+Plugin 'yuttie/comfortable-motion.vim'
 
 call vundle#end()
 filetype plugin indent on
