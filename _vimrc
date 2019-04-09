@@ -5,7 +5,7 @@ call vundle#begin()
 """"""""""""""""""Vim Plugin via Vundle""""""""""""""""""""""
 Plugin 'VundleVim/Vundle.vim' "プラグインの管理マネージャはVundleを使用"
 Plugin 'scrooloose/nerdtree'  "ディレクトリ構造をNEEDTREEで表示するプラグイン"
-nnoremap <silent><C-e> :NERDTreeToggle<CR>
+nnoremap <silent><C-i> :NERDTreeToggle<CR>
 Plugin 'Shougo/unite.vim'     "vimのインターフェースUniteのプラグイン"
 let g:unite_enable_start_insert=1 "insert modeでUniteを開く"
 let g:unite_source_history_yank_enable=1  ""
@@ -30,6 +30,8 @@ Plugin 'mbbill/undotree' "undo-treeのプラグイン"
 Plugin 'tpope/vim-surround' "カッコやシングルクォートに対するプラグイン"
 let g:gen_tags#gtags_auto_gen = 1
 let g:syntastic_python_checkers = ["flake8"]
+Plugin 'davidhalter/jedi-vim' "pyhonの関数補完検索"
+Plugin 'ervandew/supertab' "devidhalter/jedi-vimををtapで補完"
 
 call vundle#end()
 filetype plugin indent on
