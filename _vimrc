@@ -48,6 +48,9 @@ if has('vim_starting')
   let &t_SI .= "\e[6 q"
 endif
 
+set cursorline "カーソルの下に線を表示"
+hi clear CursorLine
+
 """""""""""""""""""""""""""""""""
 
 "[Backspace] で既存の文字を削除できるように設定
@@ -88,7 +91,7 @@ set showmatch " 括弧の対応関係を一瞬表示する
 
 set noswapfile "スワップファイルは使わない
 "set whichwrap=b,s,h,l,<,>,[,] "カーソルが行頭、行末で止まらないようにする"
-set nohlsearch " 検索キーワードをハイライトしないように設定
+""set nohlsearch " 検索キーワードをハイライトしないように設定
 set number	" 行番号を表示
 
 """"""""""""""""""representation of status line""""""""""""""""""""""
