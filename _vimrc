@@ -32,7 +32,12 @@ let g:gen_tags#gtags_auto_gen = 1
 let g:syntastic_python_checkers = ["flake8"]
 Plugin 'davidhalter/jedi-vim' "pyhonの関数補完検索"
 Plugin 'ervandew/supertab' "devidhalter/jedi-vimををtapで補完"
-Plugin 'yuttie/comfortable-motion.vim'
+Plugin 'yuttie/comfortable-motion.vim' "Ctrl+u,dのスクロールを滑らかにする"
+
+Plugin 'tpope/vim-markdown'
+Plugin 'kannokanno/previm'
+Plugin 'tyru/open-browser.vim'
+nnoremap <silent> <C-p> :PrevimOpen<CR>
 
 call vundle#end()
 filetype plugin indent on
