@@ -4,8 +4,10 @@ call vundle#begin()
 
 """"""""""""""""""Vim Plugin via Vundle""""""""""""""""""""""
 Plugin 'VundleVim/Vundle.vim' "プラグインの管理マネージャはVundleを使用"
+
 Plugin 'scrooloose/nerdtree'  "ディレクトリ構造をNEEDTREEで表示するプラグイン"
-nnoremap <silent><C-i> :NERDTreeToggle<CR>
+nnoremap <silent><C-i> :NERDTreeToggle<CR> 'Ctrl + iでツリーを表示'
+
 Plugin 'Shougo/unite.vim'     "vimのインターフェースUniteのプラグイン"
 let g:unite_enable_start_insert=1 "insert modeでUniteを開く"
 let g:unite_source_history_yank_enable=1  ""
@@ -17,38 +19,36 @@ Plugin 'Shougo/neomru.vim' "最近使用したファイルをUniteから呼び�
 Plugin 'bronson/vim-trailing-whitespace' "余分なスペースをハイライト・削除する"
 Plugin 'tomtom/tcomment_vim'  "gcでコメントアウト"
 Plugin 'Lokaltog/vim-powerline' "ステータスラインの表示を色別にする"
-Plugin 'reireias/vim-cheatsheet' "vimのメモを表示するプラグイン"
-let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示"
-""Plugin 'simeji/winresizer' "分割したウィンドウをリサイズ。Ctrl+eでリサイズ開始"
-""let g:winresizer_vert_resize = 1 "垂直方向を1ずつ動かす"
-""let g:winresizer_horiz_resize = 1 "水平方向を1ずつ動かす"
-""Plugin 'itchyny/lightline.vim'
-Plugin 'vim-syntastic/syntastic'  "pythonのコーディングチェックi"
-Plugin 'lighttiger2505/gtags.vim' "vimでgnu globalを使う"
-Plugin 'jsfaint/gen_tags.vim' "ctagsやgtagsの生成を自動で行う"
 Plugin 'mbbill/undotree' "undo-treeのプラグイン"
 Plugin 'tpope/vim-surround' "カッコやシングルクォートに対するプラグイン"
+
+Plugin 'reireias/vim-cheatsheet' "vimのメモを表示するプラグイン"
+let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示"
+
+Plugin 'simeji/winresizer' "分割したウィンドウをリサイズ。Ctrl+eでリサイズ開始"
+let g:winresizer_start_key = '<C-T>' "Ctrl + tでresize開始"
+let g:winresizer_vert_resize = 1 "垂直方向を1ずつ動かす"
+let g:winresizer_horiz_resize = 1 "水平方向を1ずつ動かす"
+
+Plugin 'lighttiger2505/gtags.vim' "vimでgnu globalを使う"
+Plugin 'jsfaint/gen_tags.vim' "ctagsやgtagsの生成を自動で行う"
 let g:gen_tags#gtags_auto_gen = 1
+
+Plugin 'vim-syntastic/syntastic'  "pythonのコーディングチェックi"
 let g:syntastic_python_checkers = ["flake8"]
 Plugin 'davidhalter/jedi-vim' "pyhonの関数補完検索"
 Plugin 'ervandew/supertab' "devidhalter/jedi-vimををtapで補完"
-Plugin 'yuttie/comfortable-motion.vim' "Ctrl+u,dのスクロールを滑らかにする"
 
 Plugin 'tpope/vim-markdown'
 Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
-nnoremap <silent> <C-p> :PrevimOpen<CR>
+nnoremap <silent> <C-p> :PrevimOpen<CR> "Ctrl + p でmarkdownのPreviewをブラウザで表示"
 
 call vundle#end()
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Quickfix を自動的に開く "
+" make,grepなどをした後にQuickfix を自動的に開く "
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,SyntasticCheck,Errors if len(getqflist()) != 0 | copen | endif
-
-if has('vim_starting')
-  "挿入モード時に非点滅の縦棒タイプのカーソル"
-  let &t_SI .= "\e[6 q"
-endif
 
 
 """""""""""""""""""""""""""""""""
@@ -81,7 +81,7 @@ highlight CursorLine term=none cterm=none ctermfg=none ctermbg=darkgray
 highlight LineNr cterm=none ctermbg=black ctermfg=grey
 let g:hybrid_use_iTerm_colors = 1
 
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""自動でカッコを挿入
+"""""""""""自動でカッコを挿入
 inoremap { {}<LEFT>
 inoremap ( ()<LEFT>
 inoremap < <><LEFT>
@@ -91,18 +91,18 @@ set showmatch " 括弧の対応関係を一瞬表示する
 
 set noswapfile "スワップファイルは使わない
 "set whichwrap=b,s,h,l,<,>,[,] "カーソルが行頭、行末で止まらないようにする"
-""set nohlsearch " 検索キーワードをハイライトしないように設定
+set nohlsearch " 検索キーワードをハイライトする
+set incsearch "検索ワードを全て打つ前からヒットするものをハイライト"
 set number	" 行番号を表示
 
 """"""""""""""""""representation of status line""""""""""""""""""""""
 set laststatus=2 " ステータスラインを常に表示
 set statusline=%F%r%h%= " ステータスラインの内容
-" インクリメンタル検索を有効化
-set incsearch
+
 " 補完時の一覧表示機能有効化
 set wildmenu wildmode=list:full
 set virtualedit=block
-
+set showcmd "ノーマルモードでコマンドの一部を表示"
 
 """"""""""""""""""""""Tab Setting"""""""""""""""""""""""
 set expandtab
