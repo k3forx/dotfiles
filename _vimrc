@@ -42,14 +42,14 @@ nnoremap <silent> <C-p> :PrevimOpen<CR>
 call vundle#end()
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Quickfix を自動的に開く "
+autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,SyntasticCheck,Errors if len(getqflist()) != 0 | copen | endif
 
 if has('vim_starting')
   "挿入モード時に非点滅の縦棒タイプのカーソル"
   let &t_SI .= "\e[6 q"
 endif
 
-set cursorline "カーソルの下に線を表示"
-hi clear CursorLine
 
 """""""""""""""""""""""""""""""""
 
