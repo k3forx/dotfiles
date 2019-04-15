@@ -44,6 +44,7 @@ Plugin 'kannokanno/previm'
 Plugin 'tyru/open-browser.vim'
 nnoremap <silent> <C-p> :PrevimOpen<CR> "Ctrl + p でmarkdownのPreviewをブラウザで表示"
 
+Plugin 'thinca/vim-fontzoom'
 call vundle#end()
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
