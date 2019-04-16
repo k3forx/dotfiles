@@ -113,6 +113,7 @@ alias tksr='tmux kill-server'
 alias vpn='open -a /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Client.app/'
 alias line='open -a /Applications/LINE.app'
 alias chrome='open -a /Applications/Google\ Chrome.app/'
+alias drive='open -a /Applications/google_drive.app/'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -Uz colors
