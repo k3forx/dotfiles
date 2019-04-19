@@ -114,6 +114,9 @@ alias vpn='open -a /Applications/Cisco/Cisco\ AnyConnect\ Secure\ Mobility\ Clie
 alias line='open -a /Applications/LINE.app'
 alias chrome='open -a /Applications/Google\ Chrome.app/'
 alias drive='open -a /Applications/google_drive.app/'
+alias bupd='brew update'
+alias bupg='brew upgrade'
+alias bcup='brew cleanup'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -Uz colors
