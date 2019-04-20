@@ -94,7 +94,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias viz='vi ~/.zshrc'
+alias viz='cd ~/dotfiles && vi ~/.zshrc'
 alias vidi='vi ~/.dir_colors'
 alias vivi='vi ~/.vimrc'
 alias vit='vi ~/.tmux.conf'
@@ -117,6 +117,7 @@ alias drive='open -a /Applications/google_drive.app/'
 alias bupd='brew update'
 alias bupg='brew upgrade'
 alias bcup='brew cleanup'
+alias bupdg='brew update && brew upgrade'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 autoload -Uz colors
