@@ -53,6 +53,11 @@ filetype plugin indent on
 " make,grepなどをした後にQuickfix を自動的に開く "
 autocmd QuickfixCmdPost make,grep,grepadd,vimgrep,SyntasticCheck,Errors if len(getqflist()) != 0 | copen | endif
 
+""""""""""insert modeでカーソル移動""""""""""
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 """""""""""""""""""""""""""""""""
 
