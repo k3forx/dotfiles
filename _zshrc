@@ -139,3 +139,5 @@ if [ -f ~/.dir_colors ]; then
   eval `gdircolors -b ~/.dir_colors`
 fi
 export PATH="/usr/local/sbin:$PATH"
+export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
+
