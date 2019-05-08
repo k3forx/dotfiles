@@ -27,6 +27,6 @@ alias chrome='open -a /Applications/Google\ Chrome.app/'
 PS1='\n\u@\w \t $ '
 #export LSCOLORS=excxcxdxbxegedabagacad
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PYENV_ROOT="/usr/local/bin/.pyenv"
+export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 alias brew="env PATH=${PATH/\/Users\/Kanata\/\.pyenv\/shims:/} brew"
