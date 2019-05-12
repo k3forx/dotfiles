@@ -23,8 +23,8 @@ Plugin 'mbbill/undotree'                    "undo-treeのプラグイン
 Plugin 'tpope/vim-surround'                 "カッコやシングルクォートに対するプラグイン
 Plugin 'jiangmiao/auto-pairs'               "カッコを自動的に挿入&削除
 
-Plugin 'reireias/vim-cheatsheet'                  "vimのメモを表示するプラグイン
-let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示
+" Plugin 'reireias/vim-cheatsheet'                  "vimのメモを表示するプラグイン
+" let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示
 
 Plugin 'simeji/winresizer'                  "分割したウィンドウをリサイズ
 let g:winresizer_start_key = '<C-T>'        "Ctrl + tでresize開始
