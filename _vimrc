@@ -47,6 +47,10 @@ nnoremap <silent> <C-p> :PrevimOpen<CR>     "Ctrl + p でmarkdownのPreviewを�
 
 Plugin 'tpope/vim-fugitive' "git用のプラグイン
 Plugin 'fatih/vim-go' "go用のプラグイン
+let g:go_fmt_command = "goimports"
+
+Plugin 'SirVer/ultisnips' "スニペット
+
 Plugin 'vim-scripts/vim-auto-save' "auto save
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
