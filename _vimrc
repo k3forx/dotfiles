@@ -46,6 +46,7 @@ Plugin 'tyru/open-browser.vim'
 nnoremap <silent> <C-p> :PrevimOpen<CR>     "Ctrl + p でmarkdownのPreviewをブラウザで表示
 
 Plugin 'tpope/vim-fugitive' "git用のプラグイン
+Plugin 'fatih/vim-go' "go用のプラグイン
 
 call vundle#end()
 filetype plugin indent on
@@ -60,6 +61,9 @@ inoremap <C-h> <Left>
 inoremap <C-l> <Right>
 
 """""""""""""""""""""""""""""""""
+
+""""" map ESC to jj """""
+inoremap <silent> jj <ESC>
 
 "[Backspace] で既存の文字を削除できるように設定
 "start - 既存の文字を削除できるように設定
