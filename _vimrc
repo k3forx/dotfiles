@@ -80,6 +80,8 @@ set backspace=indent,start,eol
 
 """""""""""""""""""""""""""""""buffer setting""""""""""""""""""""""""""""""
 set hidden "保存せずにバッファを切り替えるようにする"
+nnoremap <silent> <C-j> :bprev<CR>
+nnoremap <silent> <C-k> :bnext<CR>
 
 """"""""""""""""""""""""""""Mouse Setting""""""""""""""""""""""""""""""""""
 set mouse=a "マウスを使えるようにする"
