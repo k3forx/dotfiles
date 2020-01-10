@@ -19,31 +19,18 @@ Plugin 'Shougo/neomru.vim'                  "最近使用したファイルをUn
 Plugin 'bronson/vim-trailing-whitespace'    "余分なスペースをハイライト・削除する
 Plugin 'tpope/vim-commentary'               "gcでコメントアウト
 Plugin 'Lokaltog/vim-powerline'             "ステータスラインの表示を色別にする
-Plugin 'mbbill/undotree'                    "undo-treeのプラグイン
 Plugin 'tpope/vim-surround'                 "カッコやシングルクォートに対するプラグイン
 Plugin 'jiangmiao/auto-pairs'               "カッコを自動的に挿入&削除
-
-" Plugin 'reireias/vim-cheatsheet'                  "vimのメモを表示するプラグイン
-" let g:cheatsheet#cheat_file = '~/.cheatsheet.md'  ":Cheatで表示
 
 Plugin 'simeji/winresizer'                  "分割したウィンドウをリサイズ
 let g:winresizer_start_key = '<C-T>'        "Ctrl + tでresize開始
 let g:winresizer_vert_resize = 1            "垂直方向を1ずつ動かす"
 let g:winresizer_horiz_resize = 1           "水平方向を1ずつ動かす"
 
-Plugin 'lighttiger2505/gtags.vim'           "vimでgnu globalを使う
-Plugin 'jsfaint/gen_tags.vim'               "ctagsやgtagsの生成を自動で行う
-let g:gen_tags#gtags_auto_gen = 1
-
 Plugin 'vim-syntastic/syntastic'            "pythonのコーディングチェック
 let g:syntastic_python_checkers = ["flake8"]
-Plugin 'davidhalter/jedi-vim'               "pyhonの関数補完検索
+" Plugin 'davidhalter/jedi-vim'               "pyhonの関数補完検索
 Plugin 'ervandew/supertab'                  "devidhalter/jedi-vimををtapで補完
-
-Plugin 'tpope/vim-markdown'
-Plugin 'kannokanno/previm'
-Plugin 'tyru/open-browser.vim'
-nnoremap <silent> <C-p> :PrevimOpen<CR>     "Ctrl + p でmarkdownのPreviewをブラウザで表示
 
 Plugin 'tpope/vim-fugitive' "git用のプラグイン
 Plugin 'fatih/vim-go' "go用のプラグイン
@@ -54,6 +41,9 @@ Plugin 'SirVer/ultisnips' "スニペット
 Plugin 'vim-scripts/vim-auto-save' "auto save
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
+
+Plugin 'lervag/vimtex'
+Plugin 'thinca/vim-quickrun'
 
 call vundle#end()
 filetype plugin indent on
