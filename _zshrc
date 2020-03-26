@@ -104,7 +104,6 @@ alias updatedb='sudo /usr/libexec/locate.updatedb'
 alias soz='source ~/.zshrc'
 alias lt='ls -t'
 alias lg='clear && gst'
-alias rm='rm -i'
 alias op='open'
 alias opp='open .'
 alias bton='blueutil --power on'
@@ -149,5 +148,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 export GOPATH=$HOME/go
 export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/bin:$PATH
-source /usr/local/Cellar/awscli/2.0.4/libexec/bin/aws_zsh_completer.sh
+source /usr/local/Cellar/awscli/2.0.5/libexec/bin/aws_zsh_completer.sh
 
+# Added by serverless binary installer
+export PATH="$HOME/.serverless/bin:$PATH"
