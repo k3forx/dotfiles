@@ -45,7 +45,12 @@ let g:auto_save_in_insert_mode = 0
 Plugin 'lervag/vimtex'
 Plugin 'thinca/vim-quickrun'
 
-call vundle#end()
+Plugin 'hashivim/vim-terraform'
+let g:terraform_align = 1
+let g:terraform_fold_sections = 1
+let g:terraform_fmt_on_save = 1
+
+call vundre#end()
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " make,grepなどをした後にQuickfix を自動的に開く "
@@ -138,7 +143,3 @@ if &term =~ "xterm"
 
     inoremap <special> <expr> <Esc>[200~ XTermPasteBegin("")
 endif
-
-
-
-
