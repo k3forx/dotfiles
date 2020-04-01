@@ -50,7 +50,7 @@ let g:terraform_align = 1
 let g:terraform_fold_sections = 1
 let g:terraform_fmt_on_save = 1
 
-call vundre#end()
+call vundle#end()
 filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " make,grepなどをした後にQuickfix を自動的に開く "
@@ -61,8 +61,6 @@ inoremap <C-j> <Down>
 inoremap <C-k> <Up>
 inoremap <C-h> <Left>
 inoremap <C-l> <Right>
-
-"""""""""""""""""""""""""""""""""
 
 """"" map ESC to jj """""
 inoremap <silent> jj <ESC>
@@ -126,6 +124,9 @@ set virtualedit=onemore
 
 """"""""""""""""""""" Clipboard setting """"""""""""""""""
 set clipboard=unnamed,autoselect
+
+""""""""""""""""""""" folding setting """"""""""""""""""
+set foldmethod=manual
 
 
 hi MatchParen ctermfg=LightGreen ctermbg=blue
