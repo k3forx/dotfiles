@@ -1,17 +1,25 @@
-# Path to your oh-my-zsh installation.
-export ZSH="/Users/Kanata/.oh-my-zsh"
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
-# See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="simple"
+# Init Envs
+export EDITOR=vim
 
-# Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-# Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# Key bindings
+bindkey -e
 
-source $ZSH/oh-my-zsh.sh
+# Zsh Options
+setopt auto_cd
+setopt auto_param_keys
+setopt mark_dirs
+setopt EXTENDED_HISTORY
+setopt share_history
+setopt hist_ignore_all_dups
+setopt IGNOREEOF
+setopt hist_reduce_blanks # Remove superfluous blanks
 
 # aliases
 alias viz='vi ~/.zshrc'
@@ -33,23 +41,39 @@ alias bcup='brew cleanup'
 alias bupdg='brew update && brew upgrade'
 alias bdoc='brew doctor'
 
-autoload -Uz colors
-colors
-
 autoload -Uz compinit
 compinit
+
+# Plugin manager
+source ~/.zplug/init.zsh
+zplug "plugins/git", from:oh-my-zsh
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+zplug "zsh-users/zsh-completions"
+zplug "b4b4r07/zsh-gomi", if:"which fzf"
+zplug "romkatv/powerlevel10k", as:theme, depth:1
+
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+zplug load --verbose
+
+# Color Settings
+autoload -Uz colors
+colors
 
 export CLICOLOR=true
 export LSCOLORS='exfxcxdxbxGxDxabagacad'
 export LS_COLORS='di=01;34:ln=36:so=32:pi=33:ex=31:bd=36;01:cd=33;01:su=31;40;07:sg=36;40;07:tw=32;40;07:ow=33;40;07:*.pdf=35'
+autoload -U colors ; colors ; zstyle ':completion:*' list-colors "${LS_COLORS}"
 
-PROMPT=$'\n%{$fg_bold[blue]%}%n@%{$reset_color%}%{$fg_bold[green]%}%~ %*%{$reset_color%} %{$fg_bold[blue]%}$(git_prompt_info)%{$reset_color%} $ '
+[[ -z "$TMUX" && ! -z "$PS1"  ]] && exec tmux
 
-[[ -z "$TMUX" && ! -z "$PS1" ]] && exec tmux
-
-if [ -f ~/.dir_colors ]; then
-  eval `gdircolors -b ~/.dir_colors`
-fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ] || source ~/.p10k.zsh
 
 # Path
 export PATH="/usr/local/sbin:$PATH"
