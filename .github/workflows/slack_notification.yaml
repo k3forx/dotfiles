@@ -8,10 +8,10 @@ jobs:
   notify:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
+      - uses: actions/checkout@master
       - name: Send notification on Slack when master branch has been updated
-        uses: pullreminders/slack-action@v1
-        with:
-          args: '{\"channel\": \"CNTTJKLR5\", \"test\": \"There are some changes in dotfiles\"}'
+        uses: bryan-nice/slack-notification@master
         env:
-          SLACK_BOT_TOKEN: ${{secrets.SLACK_BOT_TOKEN}}
+          SLACK_WEBHOOK: ${{secrets.SLACK_BOT_TOKEN}}
+          SLACK_TITLE: "slack notification demo"
+          SLACK_MESSAGE: "demoing the slack notification"
