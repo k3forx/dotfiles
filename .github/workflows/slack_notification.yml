@@ -12,6 +12,6 @@ jobs:
       - name: Send notification on Slack when master branch has been updated
         uses: bryan-nice/slack-notification@master
         env:
-          SLACK_WEBHOOK: ${{secrets.SLACK_BOT_TOKEN}}
+          SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
           SLACK_TITLE: "slack notification demo"
           SLACK_MESSAGE: "demoing the slack notification"
