@@ -1,0 +1,17 @@
+name: notify
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Send notification on Slack when master branch has been updated
+        uses: bryan-nice/slack-notification@master
+        env:
+          SLACK_WEBHOOK: ${{secrets.SLACK_WEBHOOK}}
+          SLACK_TITLE: "slack notification demo"
+          SLACK_MESSAGE: "demoing the slack notification"
