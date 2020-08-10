@@ -29,7 +29,7 @@ let g:winresizer_horiz_resize = 1           "水平方向を1ずつ動かす"
 
 Plugin 'vim-syntastic/syntastic'            "pythonのコーディングチェック
 let g:syntastic_python_checkers = ["flake8"]
-" Plugin 'davidhalter/jedi-vim'               "pyhonの関数補完検索
+Plugin 'davidhalter/jedi-vim'               "pyhonの関数補完検索
 Plugin 'ervandew/supertab'                  "devidhalter/jedi-vimををtapで補完
 
 Plugin 'tpope/vim-fugitive' "git用のプラグイン
