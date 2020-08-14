@@ -8,6 +8,10 @@ Plugin 'VundleVim/Vundle.vim'               "プラグインの管理マネー�
 Plugin 'scrooloose/nerdtree'                "ディレクトリ構造をNEEDTREEで表示するプラグイン
 nnoremap <silent><C-i> :NERDTreeToggle<CR>  "Ctrl + iでツリーを表示
 
+" Plugin 'Shougo/denite.nvim'
+" Plugin 'roxma/nvim-yarp'
+" Plugin 'roxma/vim-hug-neovim-rpc'
+
 Plugin 'Shougo/unite.vim'                   "vimのインターフェースUniteのプラグイン
 let g:unite_enable_start_insert=1           "insert modeでUniteを開く
 let g:unite_source_history_yank_enable=1
@@ -18,7 +22,23 @@ nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file <CR>
 Plugin 'Shougo/neomru.vim'                  "最近使用したファイルをUniteから呼び出す
 Plugin 'bronson/vim-trailing-whitespace'    "余分なスペースをハイライト・削除する
 Plugin 'tpope/vim-commentary'               "gcでコメントアウト
-Plugin 'Lokaltog/vim-powerline'             "ステータスラインの表示を色別にする
+Plugin 'itchyny/lightline.vim'
+let g:lightline = {
+      \ 'colorscheme': 'one dark',
+      \ 'tabline': {
+      \   'left': [['cmd'], ['tabs']],
+      \   'right': [['close'], ['gitbranch', 'wifi', 'battery']],
+      \ },
+      \ 'component_function': {
+      \   'cwd': 'getcwd',
+      \   'gitbranch': 'gitbranch#name',
+      \   'wifi': 'wifi#component',
+      \   'battery': 'battery#component',
+      \ },
+      \}
+set laststatus=2
+set showtabline=2
+
 Plugin 'tpope/vim-surround'                 "カッコやシングルクォートに対するプラグイン
 Plugin 'jiangmiao/auto-pairs'               "カッコを自動的に挿入&削除
 
@@ -30,25 +50,36 @@ let g:winresizer_horiz_resize = 1           "水平方向を1ずつ動かす"
 Plugin 'vim-syntastic/syntastic'            "pythonのコーディングチェック
 let g:syntastic_python_checkers = ["flake8"]
 Plugin 'davidhalter/jedi-vim'               "pyhonの関数補完検索
+let g:jedi#auto_initialization = 0
+let g:jedi#use_tabs_not_buffers = 1
+let g:jedi#popup_on_dot = 0
 Plugin 'ervandew/supertab'                  "devidhalter/jedi-vimををtapで補完
+let g:SuperTabContextDefaultCompletionType = "context"
 
-Plugin 'tpope/vim-fugitive' "git用のプラグイン
-Plugin 'fatih/vim-go' "go用のプラグイン
-let g:go_fmt_command = "goimports"
+Plugin 'tpope/vim-fugitive'
+Plugin 'fatih/vim-go'
+let g:go_null_module_warning = 0
+let g:go_fmt_command = "gofmt"
+let g:syntastic_go_checkers = ['golint', 'govet', 'errcheck']
+" Plugin 'fatih/vim-go'
+" let g:go_fmt_command = 'goimports'
 
 Plugin 'SirVer/ultisnips' "スニペット
 
-Plugin 'vim-scripts/vim-auto-save' "auto save
+Plugin 'vim-scripts/vim-auto-save'
 let g:auto_save = 1
 let g:auto_save_in_insert_mode = 0
-
-Plugin 'lervag/vimtex'
-Plugin 'thinca/vim-quickrun'
 
 Plugin 'hashivim/vim-terraform'
 let g:terraform_align = 1
 let g:terraform_fold_sections = 1
 let g:terraform_fmt_on_save = 1
+
+Plugin 'lambdalisue/wifi.vim'
+let g:wifi#update_statusline = 1
+
+Plugin 'lambdalisue/battery.vim'
+Plugin 'itchyny/vim-gitbranch'
 
 call vundle#end()
 filetype plugin indent on
@@ -99,19 +130,13 @@ let g:hybrid_use_iTerm_colors = 1
 set showmatch " 括弧の対応関係を一瞬表示する
 
 set noswapfile                    "スワップファイルは使わない
-"set whichwrap=b,s,h,l,<,>,[,]    "カーソルが行頭、行末で止まらないようにする
 set nohlsearch                    "検索キーワードをハイライトする
 set incsearch                     "検索ワードを全て打つ前からヒットするものをハイライト
 set number	                      "行番号を表示
 
-""""""""""""""""""representation of status line""""""""""""""""""""""
-set laststatus=2                  "ステータスラインを常に表示
-set statusline=%F%r%h%=           "ステータスラインの内容
-
 " 補完時の一覧表示機能有効化
 set wildmenu wildmode=list:full
 set virtualedit=block
-set showcmd                       "ノーマルモードでコマンドの一部を表示"
 
 """"""""""""""""""""""Tab Setting"""""""""""""""""""""""
 set expandtab
