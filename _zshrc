@@ -4,22 +4,17 @@
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
-
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Init Envs
 export EDITOR=vim
+export PATH="$HOME/bin:$PATH"
 
 # Key bindings
 bindkey -e
 
 # Zsh Options
-setopt auto_cd
+# setopt auto_cd
 setopt auto_param_keys
 setopt mark_dirs
 setopt EXTENDED_HISTORY
@@ -28,41 +23,47 @@ setopt hist_ignore_all_dups
 setopt IGNOREEOF
 setopt hist_reduce_blanks # Remove superfluous blanks
 
-# aliases
+# alias
+alias ls='gls --color'
 alias viz='vi ~/.zshrc'
 alias vidi='vi ~/.dir_colors'
 alias vivi='vi ~/.vimrc'
 alias vit='vi ~/.tmux.conf'
 alias cdd='cd ~/dotfiles'
 alias soz='source ~/.zshrc'
-alias la='ls -a'
 alias ll='ls -l'
-alias lla='ls -al'
 alias lt='ls -t'
+alias la='ls -a'
+alias lla='ls -al'
 alias op='open'
 alias opp='open .'
 alias bton='blueutil --power on'
 alias btoff='blueutil --power off'
-alias line='open -a /Applications/LINE.app'
-alias slack='open /Applications/Slack.app'
 alias bupd='brew update'
 alias bupg='brew upgrade'
 alias bcup='brew cleanup'
 alias bupdg='brew update && brew upgrade'
 alias bdoc='brew doctor'
+alias d='docker'
+alias dc='docker-compose'
+alias dcnt='docker container'
+alias dimg='docker image'
+alias drun='docker container run --rm -d'
+alias dcur='docker container ls -f status=running -l -q'
+alias dstop='docker container stop $(dcur)'
+alias k='kubectl'
 
-autoload -Uz compinit
-compinit
+# Auto complement
+autoload -Uz compinit ; compinit
 
 # Plugin manager
 source ~/.zplug/init.zsh
-zplug "plugins/git",   from:oh-my-zsh
-zplug "romkatv/powerlevel10k", as:theme, depth:1
+zplug "plugins/git", from:oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
 zplug "zsh-users/zsh-completions"
 zplug "b4b4r07/zsh-gomi", if:"which fzf"
+zplug "romkatv/powerlevel10k", as:theme, depth:1
 
-# install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
     printf "Install? [y/N]: "
     if read -q; then
@@ -70,7 +71,6 @@ if ! zplug check --verbose; then
     fi
 fi
 
-# Then, source plugins and add commands to $PATH
 zplug load --verbose
 
 # Color Settings
@@ -85,24 +85,22 @@ autoload -U colors ; colors ; zstyle ':completion:*' list-colors "${LS_COLORS}"
 [[ -z "$TMUX" && ! -z "$PS1"  ]] && exec tmux
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-source ~/.p10k.zsh
-
-# Path
-export PATH="/usr/local/sbin:$PATH"
-export PATH="/usr/local/opt/make/libexec/gnubin:$PATH"
-## Python
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# source /Users/kanata-miyahana/homebrew/Cellar/awscli/2.0.8/libexec/bin/aws_zsh_completer.sh
+export PATH="/Users/Kanata-Miyahana/homebrew/sbin:$PATH"
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-export GOPATH=$HOME/go
 export PATH=$HOME/.nodebrew/current/bin:$PATH
-export PATH=/usr/local/bin:$PATH
 
-# Added by serverless binary installer
-export PATH="$HOME/.serverless/bin:$PATH"
-
-
-# tabtab source for packages
-# uninstall by removing these lines
-[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+autoload -U +X bashcompinit && bashcompinit
+complete -o nospace -C /usr/local/Cellar/tfenv/2.0.0/versions/0.13.1/terraform terraform
+export GOENV_ROOT="$HOME/.goenv"
+export PATH="$GOENV_ROOT/bin:$PATH"
+eval "$(goenv init -)"
+export PATH="$GOROOT/bin:$PATH"
+export PATH="$PATH:$GOPATH/bin"
+eval "$(rbenv init -)"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
+export PATH="/Users/Kanata-Miyahana/.deta/bin:$PATH"
