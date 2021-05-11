@@ -1,193 +1,101 @@
-
-# Other Homebrew packages
-brew aom
-brew autoconf
-brew automake
-brew aws-sam-cli
-brew awscli
-brew bash-completion
-brew blueutil
-brew brew-file
-brew cairo
-brew cmake
-brew coreutils
-brew ctags
-brew eigen
-brew exa
-brew ffmpeg
-brew flac
-brew fontconfig
-brew fontforge
-brew freetype
-brew frei0r
-brew fribidi
-brew gawk
-brew gcc
-brew gd
-brew gdbm
-brew gdk-pixbuf
-brew gettext
-brew ghostscript
-brew giflib
-brew git
-brew glib
-brew global
-brew gmp
-brew gnutls
-brew go
-brew gobject-introspection
-brew graphite2
-brew graphviz
-brew gts
-brew harfbuzz
-brew htop
-brew hub
-brew icu4c
-brew ilmbase
-brew imagemagick
-brew isl
-brew jasper
-brew jpeg
-brew jq
-brew kotlin
-brew krb5
-brew lame
-brew leptonica
-brew libass
-brew libbluray
-brew libcroco
-brew libde265
-brew libevent
-brew libffi
-brew libheif
-brew libidn2
-brew libmpc
-brew libogg
-brew libomp
-brew libpng
-brew librsvg
-brew libsamplerate
-brew libsndfile
-brew libsoxr
-brew libspiro
-brew libssh2
-brew libtasn1
-brew libtiff
-brew libtool
-brew libuninameslist
-brew libunistring
-brew libvidstab
-brew libvorbis
-brew libvpx
-brew libyaml
-brew little-cms2
-brew llvm
-brew lua
-brew lzo
-brew mackup
-brew make
-brew mas
-brew mono
-brew mpfr
-brew mysql
-brew ncurses
-brew netpbm
-brew nettle
-brew nkf
-brew node
-brew nodebrew
-brew nspr
-brew nss
-brew numpy
-brew oniguruma
-brew openblas
-brew opencore-amr
-brew openexr
-brew openjpeg
-brew openssl@1.1
-brew opus
-brew p11-kit
-brew pandoc
-brew pango
-brew pcre
-brew pcre2
-brew pdf2svg
-brew perl
-brew pixman
-brew pkg-config
-brew poppler
-brew postgresql
-brew protobuf
-brew protobuf@3.7
-brew pyenv
-brew python
-brew python@2
-brew python@3.8
-brew qt
-brew readline
-brew ricty
-brew ripgrep
-brew rlwrap
-brew rmtrash
-brew rtmpdump
-brew rubberband
-brew ruby
-brew rust
-brew s3cmd
-brew sdl2
-brew shared-mime-info
-brew snappy
-brew speex
-brew sqlite
-brew sshfs
-brew swig
-brew tbb
-brew terraform
-brew tesseract
-brew the_silver_searcher
-brew theora
-brew tmux
-brew translate-shell
-brew trash
-brew tree
-brew unbound
-brew universal-ctags --HEAD
-brew utf8proc
-brew vim
-brew webp
-brew wget
-brew x264
-brew x265
-brew xvid
-brew xz
-brew yarn
-brew zabbix
-brew zsh
-brew zsh-git-prompt
-
-# Other Cask applications
-cask 5kplayer
-cask appcleaner
-cask db-browser-for-sqlite
-cask discord
-cask dropbox
-cask google-chrome
-cask julia
-cask kindle
-cask mactex
-cask ngrok
-cask osxfuse
-cask skitch
-cask slack
-cask xquartz
-
-# App Store applications
-appstore 490461369 Bandwidth+ (1.18)
-appstore 1024640650 CotEditor (3.8.12)
-appstore 408981381 iPhoto (9.6.1)
-appstore 409183694 Keynote (9.2.1)
-appstore 539883307 LINE (5.23.0)
-appstore 409203825 Numbers (6.2.1)
-appstore 409201541 Pages (8.2.1)
-appstore 414298354 ToyViewer (5.6.0)
-appstore 497799835 Xcode (11.4)
+tap "argoproj/tap"
+tap "aws/tap"
+tap "elastic/tap"
+tap "garethr/kubeval"
+tap "heroku/brew"
+tap "homebrew/bundle"
+tap "homebrew/cask"
+tap "homebrew/cask-versions"
+tap "homebrew/core"
+tap "nektos/tap"
+tap "rhyeal/aws-rotate-iam-keys", "https://github.com/rhyeal/aws-rotate-iam-keys"
+tap "spring-io/tap"
+tap "universal-ctags/universal-ctags"
+tap "weaveworks/tap"
+brew "gcc"
+brew "python@3.9"
+brew "argocd"
+brew "aws-elasticbeanstalk"
+brew "aws-iam-authenticator"
+brew "awscli"
+brew "bat"
+brew "blueutil", link: false
+brew "coreutils"
+brew "curl"
+brew "dvc"
+brew "openjdk"
+brew "elasticsearch"
+brew "fzf"
+brew "gawk"
+brew "gh"
+brew "git"
+brew "git-secrets"
+brew "gnu-sed"
+brew "grep"
+brew "hadolint"
+brew "haproxy"
+brew "helm"
+brew "htop"
+brew "jq"
+brew "k3d"
+brew "kompose"
+brew "kubernetes-cli"
+brew "kubectx"
+brew "kubeseal"
+brew "mas"
+brew "maven"
+brew "minikube"
+brew "mysql"
+brew "nginx"
+brew "nkf"
+brew "nodebrew"
+brew "ocaml"
+brew "opam"
+brew "pass"
+brew "pipenv"
+brew "plantuml"
+brew "poppler"
+brew "postgresql"
+brew "pre-commit"
+brew "prettier"
+brew "pyenv"
+brew "pyenv-virtualenv"
+brew "rbenv"
+brew "rpm"
+brew "ruby"
+brew "shellcheck"
+brew "tfenv"
+brew "tflint"
+brew "tig"
+brew "tmux"
+brew "vim"
+brew "watch"
+brew "wget"
+brew "yq"
+brew "zsh"
+brew "argoproj/tap/kubectl-argo-rollouts"
+brew "elastic/tap/filebeat-full"
+brew "garethr/kubeval/kubeval"
+brew "heroku/brew/heroku"
+brew "rhyeal/aws-rotate-iam-keys/aws-rotate-iam-keys"
+brew "universal-ctags/universal-ctags/universal-ctags", args: ["HEAD"]
+brew "weaveworks/tap/eksctl"
+cask "1password"
+cask "alfred"
+cask "deepl"
+cask "google-chrome"
+cask "keybase"
+cask "lens"
+cask "notion"
+cask "slack"
+cask "visual-studio-code"
+cask "zoom"
+mas "Bandwidth+", id: 490461369
+mas "CommentScreen", id: 1450950860
+mas "Keynote", id: 409183694
+mas "LINE", id: 539883307
+mas "Microsoft Excel", id: 462058435
+mas "Microsoft PowerPoint", id: 462062816
+mas "Numbers", id: 409203825
+mas "VisualXML", id: 617516344
+mas "Xcode", id: 497799835
