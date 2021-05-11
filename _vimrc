@@ -3,12 +3,15 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 """"""""""""""""""Vim Plugin via Vundle""""""""""""""""""""""
-Plugin 'VundleVim/Vundle.vim'               "プラグインの管理マネージャはVundleを使用
+Plugin 'VundleVim/Vundle.vim'
 
-Plugin 'scrooloose/nerdtree'                "ディレクトリ構造をNEEDTREEで表示するプラグイン
-nnoremap <silent><C-i> :NERDTreeToggle<CR>  "Ctrl + iでツリーを表示
+Plugin 'scrooloose/nerdtree'
+nnoremap <silent><C-i> :NERDTreeToggle<CR>
+map <C-i> <plug>NERDTreeTabsToggle<CR>
 
-" Plugin 'Shougo/denite.nvim'
+Plugin 'jistr/vim-nerdtree-tabs'
+
+Plugin 'Shougo/denite.nvim'
 " Plugin 'roxma/nvim-yarp'
 " Plugin 'roxma/vim-hug-neovim-rpc'
 
@@ -19,23 +22,23 @@ let g:unite_source_file_mru_limit=200
 nnoremap <silent> ,uu :<C-u>Unite file_mru <CR>
 nnoremap <silent> ,uf :<C-u>UniteWithBufferDir -buffer-name=files file <CR>
 
-Plugin 'Shougo/neomru.vim'                  "最近使用したファイルをUniteから呼び出す
-Plugin 'bronson/vim-trailing-whitespace'    "余分なスペースをハイライト・削除する
-Plugin 'tpope/vim-commentary'               "gcでコメントアウト
+Plugin 'Shougo/neomru.vim'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'tpope/vim-commentary'
 Plugin 'itchyny/lightline.vim'
-let g:lightline = {
-      \ 'colorscheme': 'one dark',
-      \ 'tabline': {
-      \   'left': [['cmd'], ['tabs']],
-      \   'right': [['close'], ['gitbranch', 'wifi', 'battery']],
-      \ },
-      \ 'component_function': {
-      \   'cwd': 'getcwd',
-      \   'gitbranch': 'gitbranch#name',
-      \   'wifi': 'wifi#component',
-      \   'battery': 'battery#component',
-      \ },
-      \}
+" let g:lightline = {
+"       \ 'colorscheme': 'one dark',
+"       \ 'tabline': {
+"       \   'left': [['cmd'], ['tabs']],
+"       \   'right': [['close'], ['gitbranch', 'wifi', 'battery']],
+"       \ },
+"       \ 'component_function': {
+"       \   'cwd': 'getcwd',
+"       \   'gitbranch': 'gitbranch#name',
+"       \   'wifi': 'wifi#component',
+"       \   'battery': 'battery#component',
+"       \ },
+"       \}
 set laststatus=2
 set showtabline=2
 
@@ -48,7 +51,9 @@ let g:winresizer_vert_resize = 1            "垂直方向を1ずつ動かす"
 let g:winresizer_horiz_resize = 1           "水平方向を1ずつ動かす"
 
 Plugin 'vim-syntastic/syntastic'            "pythonのコーディングチェック
-let g:syntastic_python_checkers = ["flake8"]
+let g:syntastic_python_checkers = ["flake8", "black"]
+let g:syntastic_python_pylint_post_args="--max-line-length=120"
+let g:syntastic_python_flake8_post_args='--ignore=D401'
 Plugin 'davidhalter/jedi-vim'               "pyhonの関数補完検索
 let g:jedi#auto_initialization = 0
 let g:jedi#use_tabs_not_buffers = 1
@@ -68,18 +73,23 @@ Plugin 'SirVer/ultisnips' "スニペット
 
 Plugin 'vim-scripts/vim-auto-save'
 let g:auto_save = 1
-let g:auto_save_in_insert_mode = 0
+" let g:auto_save_in_insert_mode = 0
 
 Plugin 'hashivim/vim-terraform'
 let g:terraform_align = 1
 let g:terraform_fold_sections = 1
-let g:terraform_fmt_on_save = 1
+" let g:terraform_fmt_on_save = 1
 
 Plugin 'lambdalisue/wifi.vim'
 let g:wifi#update_statusline = 1
 
 Plugin 'lambdalisue/battery.vim'
 Plugin 'itchyny/vim-gitbranch'
+Plugin 'kamykn/spelunker.vim'
+Plugin 'Yggdroot/indentLine'
+Plugin 'majutsushi/tagbar'
+Plugin 'tarekbecker/vim-yaml-formatter'
+Plugin 'yasuhiroki/github-actions-yaml.vim'
 
 call vundle#end()
 filetype plugin indent on
@@ -146,6 +156,29 @@ set autoindent
 set smartindent
 set shiftwidth=2
 set virtualedit=onemore
+
+nnoremap    [Tag]   <Nop>
+nmap    t [Tag]
+" Tab jump
+for n in range(1, 9)
+  execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
+endfor
+" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
+
+map <silent> [Tag]c :tablast <bar> tabnew<CR>
+" tc 新しいタブを一番右に作る
+map <silent> [Tag]x :tabclose<CR>
+" tx タブを閉じる
+map <silent> [Tag]n :tabnext<CR>
+" tn 次のタブ
+map <silent> [Tag]p :tabprevious<CR>
+
+
+
+
+
+
+
 
 """"""""""""""""""""" Clipboard setting """"""""""""""""""
 set clipboard=unnamed,autoselect
