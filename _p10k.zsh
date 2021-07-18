@@ -1225,7 +1225,7 @@
   #
   # You can define different colors, icons and content expansions for different classes:
   #
-  # typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_FOREGROUND=28
+  #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_FOREGROUND=28
   #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_VISUAL_IDENTIFIER_EXPANSION='⭐'
   #   typeset -g POWERLEVEL9K_KUBECONTEXT_TEST_CONTENT_EXPANSION='> ${P9K_CONTENT} <'
   typeset -g POWERLEVEL9K_KUBECONTEXT_CLASSES=(
