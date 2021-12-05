@@ -1,0 +1,12 @@
+unmapAll "全てのキーマップをリセット
+map I focusInput "最初の入力ボックスにフォーカスをセット
+map B goBack " Shift + b で戻る
+map F goForward " Shift + f で進む
+map H previousTab
+map L nextTab
+map j scrollDown "スクロールダウン：↓
+map k scrollUp "スクロールアップ：↑
+map h scrollLeft "スクロールレフト：←
+map l scrollRight "スクロールライト：→
+map P LinkHints.activateMode "Shift + p でリンクを移動
+map e copyCurrentUrl "現在のURLをクリップボードに保存
